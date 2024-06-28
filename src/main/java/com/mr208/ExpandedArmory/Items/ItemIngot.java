@@ -12,11 +12,18 @@ import java.util.List;
 
 public class ItemIngot extends Item {
 
+    private final String oreDict;
+
     public ItemIngot(String oreDict)
     {
+        this.oreDict = oreDict;
         this.setUnlocalizedName(ExArmRef.MOD_ID+"_"+oreDict);
         this.setCreativeTab(CreativeTabs.tabMaterials);
         this.setTextureName(ExArmRef.MOD_ID+":"+oreDict);
+    }
+
+    public void registerOreDictionary() {
         OreDictionary.registerOre(oreDict,this);
     }
+
 }

@@ -1,6 +1,6 @@
 package com.mr208.ExpandedArmory.Botania;
 
-import com.mr208.ExpandedArmory.Botania.ManaHelper;
+import ckathode.weaponmod.item.MeleeComponent;
 import com.mr208.ExpandedArmory.Items.ExArmItemFlail;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;

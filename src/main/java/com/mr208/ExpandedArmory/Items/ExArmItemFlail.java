@@ -1,19 +1,24 @@
 package com.mr208.ExpandedArmory.Items;
 
 import ckathode.weaponmod.item.ItemFlail;
+import ckathode.weaponmod.item.MeleeCompNone;
+import ckathode.weaponmod.item.MeleeComponent;
 import com.mr208.ExpandedArmory.IWeaponMaterialCheck;
+import java.util.Objects;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class ExArmItemFlail extends ItemFlail implements IWeaponMaterialCheck {
     private final int materialID;
-    private final ToolMaterial toolMat;
     private final String repairMaterial;
 
     public ExArmItemFlail(String id, ToolMaterial toolmaterial, String repairMaterial) {
-        super(id, toolmaterial);
-        this.materialID = toolmaterial.ordinal();
-        this.toolMat = toolmaterial;
+        this(id, new MeleeCompNone(toolmaterial), repairMaterial);
+    }
+
+    public ExArmItemFlail(String id, MeleeComponent meleeComponent, String repairMaterial) {
+        super(id, meleeComponent);
+        this.materialID = meleeComponent.weaponMaterial.ordinal();
         this.repairMaterial = repairMaterial;
     }
 
@@ -27,7 +32,7 @@ public class ExArmItemFlail extends ItemFlail implements IWeaponMaterialCheck {
     {
         for(int ores:OreDictionary.getOreIDs(repairMaterial))
         {
-            if(OreDictionary.getOreName(ores) == this.repairMaterial) return true;
+            if(Objects.equals(OreDictionary.getOreName(ores), this.repairMaterial)) return true;
         }
         return super.getIsRepairable(itemToBeRepaired, repairMaterial);
     }

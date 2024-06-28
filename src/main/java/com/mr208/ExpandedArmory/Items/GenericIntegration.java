@@ -16,7 +16,7 @@ import net.minecraftforge.common.util.EnumHelper;
 
 public class GenericIntegration {
 
-    public static Item ingotBronze;
+    public static ItemIngot ingotBronze;
     public static Item battleaxeBronze;
     public static Item boomerangBronze;
     public static Item flailBronze;
@@ -27,7 +27,7 @@ public class GenericIntegration {
     public static Item spearBronze;
     public static Item warhammerBronze;
 
-    public static Item ingotSteel;
+    public static ItemIngot ingotSteel;
     public static Item battleaxeSteel;
     public static Item boomerangSteel;
     public static Item flailSteel;
@@ -44,7 +44,9 @@ public class GenericIntegration {
     public static void preInitGI()
     {
         GameRegistry.registerItem(ingotBronze = new ItemIngot("ingotBronze"),"ingotBronze");
+        ingotBronze.registerOreDictionary();
         GameRegistry.registerItem(ingotSteel = new ItemIngot("ingotSteel"),"ingotSteel");
+        ingotSteel.registerOreDictionary();
 
 		if(Loader.isModLoaded("Railcraft")) RailcraftIntegration.preInit();
     }
@@ -69,7 +71,7 @@ public class GenericIntegration {
         RegisterItems.RegisterRegularWeapon(weaponArray,"steel",steelMaterial,"ingotSteel");
         RegisterItems.CreateWeaponRecipes(weaponArray,"stickWood","ingotSteel");
 
-        
+
     }
 
 

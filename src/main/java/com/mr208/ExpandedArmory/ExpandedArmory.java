@@ -19,7 +19,7 @@ import net.minecraft.item.Item;
 
 import net.minecraftforge.common.MinecraftForge;
 
-@Mod(modid = ExArmRef.MOD_ID, name= ExArmRef.MOD_NAME, version= ExArmRef.MOD_VER, dependencies = "required-after:Forge@[10.13.2.1291,10.14);required-after:weaponmod@[v1.14.3,v1.15);after:Botania;after:appliedenergistics2;after:Thaumcraft;after:simpleores;after:fusion;after:netherrocks;after:Steamcraft")
+@Mod(modid = ExArmRef.MOD_ID, name= ExArmRef.MOD_NAME, version= ExArmRef.MOD_VER, dependencies = "required-after:Forge@[10.13.4.1614,10.14);required-after:weaponmod@[1.20.0,2.0.0);after:Botania;after:appliedenergistics2;after:Thaumcraft;after:simpleores;after:fusion;after:netherrocks;after:Steamcraft")
 public class ExpandedArmory {
 
 	@Mod.Instance(ExArmRef.MOD_ID)
