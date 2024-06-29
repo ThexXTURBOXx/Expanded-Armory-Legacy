@@ -9,11 +9,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class ExArmItemFlail extends ItemFlail implements IWeaponMaterialCheck {
+
     private final int materialID;
     private final String repairMaterial;
 
-    public ExArmItemFlail(String id, ToolMaterial toolmaterial, String repairMaterial) {
-        this(id, new MeleeCompNone(toolmaterial), repairMaterial);
+    public ExArmItemFlail(String id, ToolMaterial toolMaterial, String repairMaterial) {
+        this(id, new MeleeCompNone(toolMaterial), repairMaterial);
     }
 
     public ExArmItemFlail(String id, MeleeComponent meleeComponent, String repairMaterial) {
@@ -28,12 +29,11 @@ public class ExArmItemFlail extends ItemFlail implements IWeaponMaterialCheck {
     }
 
     @Override
-    public boolean getIsRepairable(ItemStack itemToBeRepaired, ItemStack repairMaterial)
-    {
-        for(int ores:OreDictionary.getOreIDs(repairMaterial))
-        {
-            if(Objects.equals(OreDictionary.getOreName(ores), this.repairMaterial)) return true;
+    public boolean getIsRepairable(ItemStack itemToBeRepaired, ItemStack repairMaterial) {
+        for (int ores : OreDictionary.getOreIDs(repairMaterial)) {
+            if (Objects.equals(OreDictionary.getOreName(ores), this.repairMaterial)) return true;
         }
         return super.getIsRepairable(itemToBeRepaired, repairMaterial);
     }
+
 }

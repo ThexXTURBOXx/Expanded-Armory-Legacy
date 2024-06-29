@@ -7,10 +7,11 @@ import vazkii.botania.api.mana.ManaItemHandler;
 
 public class ManaHelper {
 
-    public static void  damageItem(ItemStack item, int damage, EntityLivingBase player, int cost)
-    {
-        int mananeeded = damage * cost;
-        boolean manacostmet = player instanceof EntityPlayer ? ManaItemHandler.requestManaExact(item,(EntityPlayer) player,mananeeded,true) : false;
-        if(!manacostmet) item.damageItem(damage, player);
+    public static void damageItem(ItemStack item, int damage, EntityLivingBase player, int cost) {
+        int manaNeeded = damage * cost;
+        boolean manaCostMet = player instanceof EntityPlayer &&
+                              ManaItemHandler.requestManaExact(item, (EntityPlayer) player, manaNeeded, true);
+        if (!manaCostMet) item.damageItem(damage, player);
     }
+
 }

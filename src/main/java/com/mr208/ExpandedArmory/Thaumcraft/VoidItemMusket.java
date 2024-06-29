@@ -1,9 +1,10 @@
 package com.mr208.ExpandedArmory.Thaumcraft;
 
 import ckathode.weaponmod.item.MeleeComponent;
+import com.mr208.ExpandedArmory.Items.ExArmItemMusket;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import com.mr208.ExpandedArmory.Items.ExArmItemMusket;
+import java.util.List;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,23 +17,22 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import thaumcraft.api.IRepairable;
 import thaumcraft.api.IWarpingGear;
-
-import java.util.List;
 
 public class VoidItemMusket extends ExArmItemMusket implements IRepairable, IWarpingGear {
 
     private final EnumRarity rarity;
 
-    public VoidItemMusket(String id, MeleeComponent meleecomponent, Item bayonetitem, EnumRarity eRare, String repairmaterial) {
-
-        super(id, meleecomponent, bayonetitem, repairmaterial);
-        this.rarity = eRare;
+    public VoidItemMusket(String id, MeleeComponent meleeComponent, Item bayonetItem, EnumRarity rarity,
+                          String repairMaterial) {
+        super(id, meleeComponent, bayonetItem, repairMaterial);
+        this.rarity = rarity;
     }
 
-    public EnumRarity func_77613_e(ItemStack par1)
-    {
+    @Override
+    public EnumRarity getRarity(ItemStack par1) {
         return rarity;
     }
 
@@ -42,32 +42,30 @@ public class VoidItemMusket extends ExArmItemMusket implements IRepairable, IWar
     }
 
     @Override
-    public void onUpdate(ItemStack stack, World world, Entity entity, int p_77663_4_, boolean p_77663_5_)
-    {
-        super.onUpdate(stack, world, entity, p_77663_4_, p_77663_5_);
-        if ((stack.isItemDamaged()) && (entity != null) && (entity.ticksExisted % 20 == 0) && ((entity instanceof EntityLivingBase)))
-        {  stack.damageItem(-1, (EntityLivingBase)entity);  }
-    }
-
-    @Override
-    public boolean hitEntity(ItemStack weapon, EntityLivingBase Victim, EntityLivingBase Attacker)
-    {
-        if(!Victim.worldObj.isRemote && (!(Victim instanceof EntityPlayer) || !(Attacker instanceof EntityPlayer) || MinecraftServer.getServer().isPVPEnabled()))
-        {
-            try {
-                Victim.addPotionEffect(new PotionEffect(Potion.weakness.getId(), 60));
-            }
-            catch (Exception e)
-            {        }
+    public void onUpdate(@NotNull ItemStack stack, @NotNull World world, @NotNull Entity entity, int i, boolean flag) {
+        super.onUpdate(stack, world, entity, i, flag);
+        if (stack.isItemDamaged() && entity.ticksExisted % 20 == 0 && entity instanceof EntityLivingBase) {
+            stack.damageItem(-1, (EntityLivingBase) entity);
         }
-        return super.hitEntity(weapon, Victim,Attacker);
     }
 
-    @SideOnly(Side.CLIENT)
     @Override
-    public void addInformation(ItemStack weapon, EntityPlayer player, List list, boolean bool)
-    {
-        list.add(EnumChatFormatting.GOLD + StatCollector.translateToLocal("enchantment.special.sapless"));
-        super.addInformation(weapon,player,list,bool);
+    public boolean hitEntity(@NotNull ItemStack weapon, EntityLivingBase victim, @NotNull EntityLivingBase attacker) {
+        if (!victim.worldObj.isRemote && (!(victim instanceof EntityPlayer) || !(attacker instanceof EntityPlayer) ||
+                                          MinecraftServer.getServer().isPVPEnabled())) {
+            try {
+                victim.addPotionEffect(new PotionEffect(Potion.weakness.getId(), 60));
+            } catch (Exception ignored) {
+            }
+        }
+        return super.hitEntity(weapon, victim, attacker);
     }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack weapon, EntityPlayer player, List list, boolean bool) {
+        list.add(EnumChatFormatting.GOLD + StatCollector.translateToLocal("enchantment.special.sapless"));
+        super.addInformation(weapon, player, list, bool);
+    }
+
 }

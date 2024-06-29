@@ -6,17 +6,18 @@ import net.minecraft.item.ItemStack;
 import thaumcraft.api.IRepairable;
 
 
-public class ThaumicItemFlail extends ExArmItemFlail implements IRepairable
-        {
-            private EnumRarity rarity;
-            public ThaumicItemFlail(String id, ToolMaterial toolmaterial, EnumRarity eRare, String repairmaterial)
-            {
-                super(id, toolmaterial,repairmaterial);
-                this.rarity = eRare;
-            }
+public class ThaumicItemFlail extends ExArmItemFlail implements IRepairable {
 
-            public EnumRarity func_77613_e(ItemStack par1)
-            {
-                return rarity;
-            }
-        }
+    private final EnumRarity rarity;
+
+    public ThaumicItemFlail(String id, ToolMaterial toolMaterial, EnumRarity rarity, String repairMaterial) {
+        super(id, toolMaterial, repairMaterial);
+        this.rarity = rarity;
+    }
+
+    @Override
+    public EnumRarity getRarity(ItemStack par1) {
+        return rarity;
+    }
+
+}

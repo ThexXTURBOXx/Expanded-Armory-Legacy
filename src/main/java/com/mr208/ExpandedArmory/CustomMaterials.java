@@ -7,30 +7,27 @@ import net.minecraft.item.ItemStack;
 public class CustomMaterials implements ICustomProjectileMaterials {
 
     public final Item.ToolMaterial customMat;
-    private float[] entityColorF;
     public final int entityColorI;
+    public final float[] entityColorF;
 
-    public CustomMaterials(Item.ToolMaterial material, int color)
-    {
+    public CustomMaterials(Item.ToolMaterial material, int color) {
         customMat = material;
         entityColorI = color;
-        entityColorF = null;
+        entityColorF = new float[4];
+        entityColorF[0] = ((entityColorI >> 24) & 0xFF) / 255f;
+        entityColorF[1] = ((entityColorI >> 16) & 0xFF) / 255f;
+        entityColorF[2] = ((entityColorI >> 8) & 0xFF) / 255f;
+        entityColorF[3] = (entityColorI & 0xFF) / 255f;
     }
-
-
 
     @Override
     public int[] getAllMaterialIDs() {
-        int[] ids = {customMat.ordinal()};
-        return ids;
+        return new int[]{customMat.ordinal()};
     }
 
     @Override
     public int getMaterialID(ItemStack itemStack) {
-
-
-        if(itemStack.getItem() instanceof IWeaponMaterialCheck)
-        {
+        if (itemStack.getItem() instanceof IWeaponMaterialCheck) {
             return ((IWeaponMaterialCheck) itemStack.getItem()).getMaterialID();
         }
         return 0;
@@ -38,15 +35,7 @@ public class CustomMaterials implements ICustomProjectileMaterials {
 
     @Override
     public float[] getColorFromMaterialID(int i) {
-
-        if(entityColorF==null)
-        {
-            entityColorF = new float[4];
-            entityColorF[0] = ((entityColorI >> 24) & 0xFF)/255f;
-            entityColorF[1] = ((entityColorI >> 16) & 0xFF)/255f;
-            entityColorF[2] = ((entityColorI >> 8) & 0xFF)/255f;
-            entityColorF[3] = (entityColorI & 0xFF)/255f;
-        }
         return entityColorF;
     }
+
 }

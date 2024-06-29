@@ -13,17 +13,16 @@ import vazkii.botania.api.mana.ManaItemHandler;
 
 
 public class BotanicalItemCrowbar extends ExArmItemCrowbar implements IManaUsingItem {
+
     public static final int MANA_PER_DMG = 51;
 
-    public BotanicalItemCrowbar(Item.ToolMaterial tmMaterial,String name,String sMaterial)
-    {
-        super(tmMaterial,name,sMaterial);
+    public BotanicalItemCrowbar(Item.ToolMaterial tmMaterial, String name, String sMaterial) {
+        super(tmMaterial, name, sMaterial);
     }
 
     @Override
-    public boolean hitEntity(ItemStack itemWeapon, EntityLivingBase targetEntity,EntityLivingBase usingEntity)
-    {
-        if(usesMana(itemWeapon)) ManaHelper.damageItem(itemWeapon,1,usingEntity,MANA_PER_DMG);
+    public boolean hitEntity(ItemStack itemWeapon, EntityLivingBase targetEntity, EntityLivingBase usingEntity) {
+        if (usesMana(itemWeapon)) ManaHelper.damageItem(itemWeapon, 1, usingEntity, MANA_PER_DMG);
         return super.hitEntity(itemWeapon, targetEntity, usingEntity);
     }
 
@@ -33,18 +32,18 @@ public class BotanicalItemCrowbar extends ExArmItemCrowbar implements IManaUsing
     }
 
     @Override
-    public boolean onBlockDestroyed(ItemStack itemWeapon, World world, Block block, int x,int y, int z, EntityLivingBase player)
-    {
-        if(usesMana(itemWeapon) && block.getBlockHardness(world,x,y,z) !=0f) ManaHelper.damageItem(itemWeapon,1,player,MANA_PER_DMG);
+    public boolean onBlockDestroyed(ItemStack itemWeapon, World world, Block block, int x, int y, int z,
+                                    EntityLivingBase player) {
+        if (usesMana(itemWeapon) && block.getBlockHardness(world, x, y, z) != 0f)
+            ManaHelper.damageItem(itemWeapon, 1, player, MANA_PER_DMG);
         return super.onBlockDestroyed(itemWeapon, world, block, x, y, z, player);
     }
 
     @Override
-    public void onUpdate(ItemStack weapon, World world, Entity player, int num, boolean bool)
-    {
-        if(!world.isRemote && player instanceof EntityPlayer && weapon.getItemDamage() >0 && ManaItemHandler.requestManaExactForTool(weapon, (EntityPlayer) player, MANA_PER_DMG * 2, true))
+    public void onUpdate(ItemStack weapon, World world, Entity player, int num, boolean bool) {
+        if (!world.isRemote && player instanceof EntityPlayer && weapon.getItemDamage() > 0 &&
+            ManaItemHandler.requestManaExactForTool(weapon, (EntityPlayer) player, MANA_PER_DMG * 2, true))
             weapon.setItemDamage(weapon.getItemDamage() - 1);
     }
-
 
 }

@@ -7,17 +7,18 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import thaumcraft.api.IRepairable;
 
-public class ThaumicItemMusket extends ExArmItemMusket implements IRepairable
-{
+public class ThaumicItemMusket extends ExArmItemMusket implements IRepairable {
+
     private final EnumRarity rarity;
 
-    public ThaumicItemMusket(String id, MeleeComponent meleecomponent, Item bayonetitem, EnumRarity eRare, String repairmaterial) {
-        super(id, meleecomponent, bayonetitem, repairmaterial);
-        this.rarity = eRare;
+    public ThaumicItemMusket(String id, MeleeComponent meleeComponent, Item bayonetItem, EnumRarity rarity,
+                             String repairMaterial) {
+        super(id, meleeComponent, bayonetItem, repairMaterial);
+        this.rarity = rarity;
     }
 
-    public EnumRarity func_77613_e(ItemStack par1)
-    {
+    @Override
+    public EnumRarity getRarity(ItemStack par1) {
         return rarity;
     }
 
