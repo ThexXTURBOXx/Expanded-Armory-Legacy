@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter
 plugins {
     idea
     java
-    id("gg.essential.loom") version "1.6.9999"
+    id("gg.essential.loom") version "1.6.9999-fg1-2"
     id("dev.architectury.architectury-pack200") version "0.1.3"
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
@@ -89,7 +89,7 @@ dependencies {
     shadowImpl("com.github.makamys:MCLib:0.3.7.6") {
         exclude(group = "codechicken")
     }
-    modApi("curse.maven:balkons-weaponmod-legacy-1033985:5480700")
+    modApi("curse.maven:balkons-weaponmod-legacy-1033985:5489319")
     modApi("curse.maven:applied-energistics-2-223794:2296430")
     modApi("curse.maven:botania-225643:2283837")
     modApi("curse.maven:railcraft-51195:2458987")

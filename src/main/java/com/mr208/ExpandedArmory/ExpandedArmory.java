@@ -16,7 +16,7 @@ import makamys.mclib.core.MCLibModules;
 
 @Mod(modid = ExArmRef.MOD_ID, name = ExArmRef.MOD_NAME, version = ExArmRef.MOD_VER,
         acceptedMinecraftVersions = "@MC_RANGE@",
-        dependencies = "required-after:Forge@[10.13.4.1614,10.14);required-after:weaponmod@[1.20.0,2.0.0);" +
+        dependencies = "required-after:Forge@[10.13.4.1614,10.14);required-after:weaponmod@[1.21.3,2.0.0);" +
                        "after:Botania;after:appliedenergistics2;after:Thaumcraft;after:simpleores;after:fusion;" +
                        "after:netherrocks;after:Steamcraft;after:Railcraft;after:gildediron")
 public class ExpandedArmory {
