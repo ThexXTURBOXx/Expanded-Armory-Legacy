@@ -11,9 +11,9 @@ public class ThaumicItemMusket extends ExArmItemMusket implements IRepairable {
 
     private final EnumRarity rarity;
 
-    public ThaumicItemMusket(String id, MeleeComponent meleeComponent, Item bayonetItem, EnumRarity rarity,
-                             String repairMaterial) {
-        super(id, meleeComponent, bayonetItem, repairMaterial);
+    public ThaumicItemMusket(String modId, String id, MeleeComponent meleeComponent, Item bayonetItem,
+                             EnumRarity rarity, String repairMaterial) {
+        super(modId, id, meleeComponent, bayonetItem, repairMaterial);
         this.rarity = rarity;
     }
 

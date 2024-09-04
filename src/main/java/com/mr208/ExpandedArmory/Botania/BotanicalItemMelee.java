@@ -17,8 +17,8 @@ public class BotanicalItemMelee extends ExArmItemMelee implements IManaUsingItem
 
     public static final int MANA_PER_DMG = 51;
 
-    public BotanicalItemMelee(String id, MeleeComponent meleeComponent, String repairMaterial) {
-        super(id, meleeComponent, repairMaterial);
+    public BotanicalItemMelee(String modId, String id, MeleeComponent meleeComponent, String repairMaterial) {
+        super(modId, id, meleeComponent, repairMaterial);
     }
 
     @Override

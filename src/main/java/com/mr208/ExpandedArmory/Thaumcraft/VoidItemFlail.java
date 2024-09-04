@@ -23,8 +23,8 @@ public class VoidItemFlail extends ExArmItemFlail implements IRepairable, IWarpi
 
     private final EnumRarity rarity;
 
-    public VoidItemFlail(String id, ToolMaterial toolMaterial, EnumRarity rarity, String repairMaterial) {
-        super(id, toolMaterial, repairMaterial);
+    public VoidItemFlail(String modId, String id, ToolMaterial toolMaterial, EnumRarity rarity, String repairMaterial) {
+        super(modId, id, toolMaterial, repairMaterial);
         this.rarity = rarity;
     }
 

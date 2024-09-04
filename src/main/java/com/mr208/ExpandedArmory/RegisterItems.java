@@ -22,37 +22,42 @@ public class RegisterItems {
 
     public static WeaponCollection registerRegularWeapon(String itemName, Item.ToolMaterial material,
                                                          String repairItem) {
+        return registerRegularWeapon("@MOD_ID@", itemName, material, repairItem);
+    }
+
+    public static WeaponCollection registerRegularWeapon(String modId, String itemName,
+                                                         Item.ToolMaterial material, String repairItem) {
         Item battleaxe = null, boomerang = null, flail = null, halberd = null, katana = null, knife = null,
                 musketWithBayonet = null, spear = null, warhammer = null;
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("battleaxe"))
-            battleaxe = new ExArmItemMelee("battleaxe." + itemName, new MeleeCompBattleaxe(material),
+            battleaxe = new ExArmItemMelee(modId, "battleaxe." + itemName, new MeleeCompBattleaxe(material),
                     repairItem).setTextureName("@MOD_ID@:" + itemName + "/battleaxe." + itemName);
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("boomerang"))
-            boomerang = new ExArmItemMelee("boomerang." + itemName, new MeleeCompBoomerang(material), repairItem)
+            boomerang = new ExArmItemMelee(modId, "boomerang." + itemName, new MeleeCompBoomerang(material), repairItem)
                     .setTextureName("@MOD_ID@:" + itemName + "/boomerang." + itemName);
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("flail"))
-            flail = new ExArmItemFlail("flail." + itemName, material, repairItem)
+            flail = new ExArmItemFlail(modId, "flail." + itemName, material, repairItem)
                     .setTextureName("@MOD_ID@:" + itemName + "/flail." + itemName);
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("halberd"))
-            halberd = new ExArmItemMelee("halberd." + itemName, new MeleeCompHalberd(material), repairItem)
+            halberd = new ExArmItemMelee(modId, "halberd." + itemName, new MeleeCompHalberd(material), repairItem)
                     .setTextureName("@MOD_ID@:" + itemName + "/halberd." + itemName);
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("katana"))
-            katana = new ExArmItemMelee("katana." + itemName,
+            katana = new ExArmItemMelee(modId, "katana." + itemName,
                     new MeleeComponent(MeleeComponent.MeleeSpecs.KATANA, material), repairItem)
                     .setTextureName("@MOD_ID@:" + itemName + "/katana." + itemName);
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("knife")) {
-            knife = new ExArmItemMelee("knife." + itemName, new MeleeCompKnife(material), repairItem)
+            knife = new ExArmItemMelee(modId, "knife." + itemName, new MeleeCompKnife(material), repairItem)
                     .setTextureName("@MOD_ID@:" + itemName + "/knife." + itemName);
             if (BalkonsWeaponMod.instance.modConfig.isEnabled("musket"))
-                musketWithBayonet = new ExArmItemMusket("musketbayonet." + itemName,
+                musketWithBayonet = new ExArmItemMusket(modId, "musketbayonet." + itemName,
                         new MeleeCompKnife(material), knife, repairItem)
                         .setTextureName("@MOD_ID@:" + itemName + "/musketbayonet." + itemName);
         }
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("spear"))
-            spear = new ExArmItemMelee("spear." + itemName, new MeleeCompSpear(material), repairItem)
+            spear = new ExArmItemMelee(modId, "spear." + itemName, new MeleeCompSpear(material), repairItem)
                     .setTextureName("@MOD_ID@:" + itemName + "/spear." + itemName);
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("warhammer"))
-            warhammer = new ExArmItemMelee("warhammer." + itemName, new MeleeCompWarhammer(material), repairItem)
+            warhammer = new ExArmItemMelee(modId, "warhammer." + itemName, new MeleeCompWarhammer(material), repairItem)
                     .setTextureName("@MOD_ID@:" + itemName + "/warhammer." + itemName);
         return new WeaponCollection(
                 battleaxe, boomerang, flail, halberd, katana, knife, musketWithBayonet, spear, warhammer);

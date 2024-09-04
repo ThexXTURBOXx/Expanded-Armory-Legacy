@@ -17,8 +17,9 @@ public class BotanicalItemMusket extends ExArmItemMusket implements IManaUsingIt
 
     private static final int MANA_PER_DMG = 51;
 
-    public BotanicalItemMusket(String id, MeleeComponent meleeComponent, Item bayonetItem, String repairMaterial) {
-        super(id, meleeComponent, bayonetItem, repairMaterial);
+    public BotanicalItemMusket(String modId, String id, MeleeComponent meleeComponent, Item bayonetItem,
+                               String repairMaterial) {
+        super(modId, id, meleeComponent, bayonetItem, repairMaterial);
     }
 
     @Override

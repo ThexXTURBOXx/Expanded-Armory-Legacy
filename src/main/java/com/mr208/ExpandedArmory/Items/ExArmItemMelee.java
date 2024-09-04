@@ -35,15 +35,16 @@ public class ExArmItemMelee extends ItemMelee implements IWeaponMaterialCheck, I
     private final EnumRarity itemRarity;
     private final int MANA_PER_DMG = 51;
 
-    public ExArmItemMelee(String id, MeleeComponent meleeComponent, String repairMaterial) {
-        super(id, meleeComponent);
+    public ExArmItemMelee(String modId, String id, MeleeComponent meleeComponent, String repairMaterial) {
+        super(modId, id, meleeComponent);
         this.materialID = meleeComponent.weaponMaterial.ordinal();
         this.repairMaterial = repairMaterial;
         this.itemRarity = EnumRarity.common;
     }
 
-    public ExArmItemMelee(String id, MeleeComponent meleeComponent, String repairMaterial, EnumRarity rarity) {
-        super(id, meleeComponent);
+    public ExArmItemMelee(String modId, String id, MeleeComponent meleeComponent, String repairMaterial,
+                          EnumRarity rarity) {
+        super(modId, id, meleeComponent);
         this.materialID = meleeComponent.weaponMaterial.ordinal();
         this.repairMaterial = repairMaterial;
         this.itemRarity = rarity;

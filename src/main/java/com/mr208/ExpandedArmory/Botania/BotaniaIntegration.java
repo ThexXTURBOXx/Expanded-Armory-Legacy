@@ -41,39 +41,39 @@ public class BotaniaIntegration {
         Item battleaxe = null, boomerang = null, flail = null, halberd = null, katana = null, knife = null,
                 musketWithBayonet = null, spear = null, warhammer = null;
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("battleaxe"))
-            battleaxe = new ExArmItemMelee("battleaxe.manasteel",
+            battleaxe = new ExArmItemMelee("@MOD_ID@", "battleaxe.manasteel",
                     new MeleeCompBattleaxe(BotaniaAPI.manasteelToolMaterial), "ingotManasteel")
                     .setTextureName("@MOD_ID@:manasteel/battleaxe.manasteel");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("boomerang"))
-            boomerang = new ExArmItemMelee("boomerang.manasteel",
+            boomerang = new ExArmItemMelee("@MOD_ID@", "boomerang.manasteel",
                     new MeleeCompBoomerang(BotaniaAPI.manasteelToolMaterial), "ingotManasteel")
                     .setTextureName("@MOD_ID@:manasteel/boomerang.manasteel");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("flail"))
-            flail = new BotanicalItemFlail("flail.manasteel", BotaniaAPI.manasteelToolMaterial,
+            flail = new BotanicalItemFlail("@MOD_ID@", "flail.manasteel", BotaniaAPI.manasteelToolMaterial,
                     "ingotManasteel").setTextureName("@MOD_ID@:manasteel/flail.manasteel");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("halberd"))
-            halberd = new ExArmItemMelee("halberd.manasteel",
+            halberd = new ExArmItemMelee("@MOD_ID@", "halberd.manasteel",
                     new MeleeCompHalberd(BotaniaAPI.manasteelToolMaterial), "ingotManasteel")
                     .setTextureName("@MOD_ID@:manasteel/halberd.manasteel");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("katana"))
-            katana = new ExArmItemMelee("katana.manasteel",
+            katana = new ExArmItemMelee("@MOD_ID@", "katana.manasteel",
                     new MeleeComponent(MeleeComponent.MeleeSpecs.KATANA, BotaniaAPI.manasteelToolMaterial),
                     "ingotManasteel").setTextureName("@MOD_ID@:manasteel/katana.manasteel");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("knife")) {
-            knife = new ExArmItemMelee("knife.manasteel",
+            knife = new ExArmItemMelee("@MOD_ID@", "knife.manasteel",
                     new MeleeCompKnife(BotaniaAPI.manasteelToolMaterial), "ingotManasteel")
                     .setTextureName("@MOD_ID@:manasteel/knife.manasteel");
             if (BalkonsWeaponMod.instance.modConfig.isEnabled("musket"))
-                musketWithBayonet = new BotanicalItemMusket("musketbayonet.manasteel",
+                musketWithBayonet = new BotanicalItemMusket("@MOD_ID@", "musketbayonet.manasteel",
                         new MeleeCompKnife(BotaniaAPI.manasteelToolMaterial), knife, "ingotManasteel")
                         .setTextureName("@MOD_ID@:manasteel/musketbayonet.manasteel");
         }
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("spear"))
-            spear = new ExArmItemMelee("spear.manasteel",
+            spear = new ExArmItemMelee("@MOD_ID@", "spear.manasteel",
                     new MeleeCompSpear(BotaniaAPI.manasteelToolMaterial), "ingotManasteel")
                     .setTextureName("@MOD_ID@:manasteel/spear.manasteel");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("warhammer"))
-            warhammer = new ExArmItemMelee("warhammer.manasteel",
+            warhammer = new ExArmItemMelee("@MOD_ID@", "warhammer.manasteel",
                     new MeleeCompWarhammer(BotaniaAPI.manasteelToolMaterial), "ingotManasteel")
                     .setTextureName("@MOD_ID@:manasteel/warhammer.manasteel");
 

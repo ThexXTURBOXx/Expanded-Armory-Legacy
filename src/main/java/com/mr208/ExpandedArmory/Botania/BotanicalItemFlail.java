@@ -15,8 +15,8 @@ public class BotanicalItemFlail extends ExArmItemFlail implements IManaUsingItem
 
     private static final int MANA_PER_DMG = 51;
 
-    public BotanicalItemFlail(String id, ToolMaterial toolMaterial, String repairMaterial) {
-        super(id, toolMaterial, repairMaterial);
+    public BotanicalItemFlail(String modId, String id, ToolMaterial toolMaterial, String repairMaterial) {
+        super(modId, id, toolMaterial, repairMaterial);
     }
 
     @Override

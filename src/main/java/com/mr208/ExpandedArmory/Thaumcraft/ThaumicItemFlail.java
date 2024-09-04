@@ -10,8 +10,9 @@ public class ThaumicItemFlail extends ExArmItemFlail implements IRepairable {
 
     private final EnumRarity rarity;
 
-    public ThaumicItemFlail(String id, ToolMaterial toolMaterial, EnumRarity rarity, String repairMaterial) {
-        super(id, toolMaterial, repairMaterial);
+    public ThaumicItemFlail(String modId, String id, ToolMaterial toolMaterial, EnumRarity rarity,
+                            String repairMaterial) {
+        super(modId, id, toolMaterial, repairMaterial);
         this.rarity = rarity;
     }
 

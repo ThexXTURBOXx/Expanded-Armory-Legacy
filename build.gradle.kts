@@ -20,6 +20,8 @@ val maven_group: String by project
 val forge_version: String by project
 val forge_version_range: String by project
 val loader_version_range: String by project
+val bwm_version_curse: String by project
+val bwm_version_range: String by project
 val mod_id: String by project
 val mod_name: String by project
 val mod_license: String by project
@@ -89,7 +91,7 @@ dependencies {
     shadowImpl("com.github.makamys:MCLib:0.3.7.6") {
         exclude(group = "codechicken")
     }
-    modApi("curse.maven:balkons-weaponmod-legacy-1033985:5489319")
+    modApi("curse.maven:balkons-weaponmod-legacy-1033985:$bwm_version_curse")
     modApi("curse.maven:applied-energistics-2-223794:2296430")
     modApi("curse.maven:botania-225643:2283837")
     modApi("curse.maven:railcraft-51195:2458987")
@@ -105,6 +107,7 @@ val processSource = tasks.register<Sync>("processSource") {
             Pair("MOD_VERSION", mod_version),
             Pair("MOD_NAME", mod_name),
             Pair("MC_RANGE", minecraft_version_range),
+            Pair("BWM_VERSION_RANGE", bwm_version_range),
             Pair("MOD_ID", mod_id),
             Pair("MOD_UPDATE_JSON", mod_update_json)
         )

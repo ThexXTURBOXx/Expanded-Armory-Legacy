@@ -15,7 +15,6 @@ public class ExArmItemCrowbar extends ItemCrowbar {
     private final String materialName;
 
     public ExArmItemCrowbar(Item.ToolMaterial tmMaterial, String name, String sMaterial) {
-
         super(tmMaterial);
         this.materialName = name;
         this.setUnlocalizedName("crowbar." + name);

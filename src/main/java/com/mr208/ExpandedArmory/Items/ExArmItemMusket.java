@@ -13,8 +13,9 @@ public class ExArmItemMusket extends ItemMusket implements IWeaponMaterialCheck 
     private final int materialID;
     private final String repairMaterial;
 
-    public ExArmItemMusket(String id, MeleeComponent meleeComponent, Item bayonetItem, String repairMaterial) {
-        super(id, meleeComponent, bayonetItem);
+    public ExArmItemMusket(String modId, String id, MeleeComponent meleeComponent, Item bayonetItem,
+                           String repairMaterial) {
+        super(modId, id, meleeComponent, bayonetItem);
         this.materialID = meleeComponent.weaponMaterial.ordinal();
         this.repairMaterial = repairMaterial;
     }

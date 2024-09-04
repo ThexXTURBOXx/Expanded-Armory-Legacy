@@ -13,8 +13,9 @@ public class ThaumicItemMelee extends ExArmItemMelee implements IRepairable {
 
     private final String repairMaterial;
 
-    public ThaumicItemMelee(String id, MeleeComponent meleeComponent, String repairMaterial, EnumRarity rarity) {
-        super(id, meleeComponent, repairMaterial, rarity);
+    public ThaumicItemMelee(String modId, String id, MeleeComponent meleeComponent, String repairMaterial,
+                            EnumRarity rarity) {
+        super(modId, id, meleeComponent, repairMaterial, rarity);
         this.repairMaterial = repairMaterial;
     }
 

@@ -13,12 +13,12 @@ public class ExArmItemFlail extends ItemFlail implements IWeaponMaterialCheck {
     private final int materialID;
     private final String repairMaterial;
 
-    public ExArmItemFlail(String id, ToolMaterial toolMaterial, String repairMaterial) {
-        this(id, new MeleeCompNone(toolMaterial), repairMaterial);
+    public ExArmItemFlail(String modId, String id, ToolMaterial toolMaterial, String repairMaterial) {
+        this(modId, id, new MeleeCompNone(toolMaterial), repairMaterial);
     }
 
-    public ExArmItemFlail(String id, MeleeComponent meleeComponent, String repairMaterial) {
-        super(id, meleeComponent);
+    public ExArmItemFlail(String modId, String id, MeleeComponent meleeComponent, String repairMaterial) {
+        super(modId, id, meleeComponent);
         this.materialID = meleeComponent.weaponMaterial.ordinal();
         this.repairMaterial = repairMaterial;
     }
