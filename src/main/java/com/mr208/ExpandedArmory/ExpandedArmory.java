@@ -14,14 +14,19 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import makamys.mclib.core.MCLib;
 import makamys.mclib.core.MCLibModules;
 
-@Mod(modid = ExArmRef.MOD_ID, name = ExArmRef.MOD_NAME, version = ExArmRef.MOD_VER,
+import static com.mr208.ExpandedArmory.ExArmRef.MOD_ID;
+import static com.mr208.ExpandedArmory.ExArmRef.MOD_NAME;
+import static com.mr208.ExpandedArmory.ExArmRef.MOD_VER;
+import static com.mr208.ExpandedArmory.ExArmRef.UPDATE_JSON;
+
+@Mod(modid = MOD_ID, name = MOD_NAME, version = MOD_VER,
         acceptedMinecraftVersions = "@MC_RANGE@",
-        dependencies = "required-after:Forge@[10.13.4.1614,10.14);required-after:weaponmod@@BWM_VERSION_RANGE@;" +
+        dependencies = "required-after:Forge;required-after:weaponmod@@BWM_VERSION_RANGE@;" +
                        "after:Botania;after:appliedenergistics2;after:Thaumcraft;after:simpleores;after:fusion;" +
                        "after:netherrocks;after:Steamcraft;after:Railcraft;after:gildediron")
 public class ExpandedArmory {
 
-    @Mod.Instance(ExArmRef.MOD_ID)
+    @Mod.Instance(MOD_ID)
     public static ExpandedArmory instance;
 
     @Mod.EventHandler
@@ -31,7 +36,7 @@ public class ExpandedArmory {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        MCLibModules.updateCheckAPI.submitModTask(ExArmRef.MOD_ID, ExArmRef.MOD_VER, ExArmRef.UPDATE_JSON);
+        MCLibModules.updateCheckAPI.submitModTask(MOD_ID, MOD_VER, UPDATE_JSON);
 
         ExArmConfig.init(event.getSuggestedConfigurationFile());
         if (ExArmConfig.enableFSP && Loader.isModLoaded("Steamcraft"))

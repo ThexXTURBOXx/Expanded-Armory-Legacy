@@ -30,10 +30,10 @@ import vazkii.botania.api.mana.ManaItemHandler;
         value = {@Optional.Interface(iface = "vazkii.botania.api.mana.IManaUsingItem", modid = "botania")})
 public class ExArmItemMelee extends ItemMelee implements IWeaponMaterialCheck, IManaUsingItem {
 
+    private static final int MANA_PER_DMG = 51;
     private final int materialID;
     private final String repairMaterial;
     private final EnumRarity itemRarity;
-    private final int MANA_PER_DMG = 51;
 
     public ExArmItemMelee(String modId, String id, MeleeComponent meleeComponent, String repairMaterial) {
         super(modId, id, meleeComponent);
@@ -97,8 +97,8 @@ public class ExArmItemMelee extends ItemMelee implements IWeaponMaterialCheck, I
         return super.getIsRepairable(itemToBeRepaired, repairMaterial);
     }
 
-    @SideOnly(Side.CLIENT)
     @Override
+    @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack weapon, EntityPlayer player, List list, boolean bool) {
         if ("ingotVoid".equals(repairMaterial)) {
             list.add(EnumChatFormatting.GOLD + StatCollector.translateToLocal("enchantment.special.sapless"));

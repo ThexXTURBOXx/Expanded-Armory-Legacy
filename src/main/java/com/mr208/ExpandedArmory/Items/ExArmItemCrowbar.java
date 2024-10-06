@@ -8,6 +8,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
+import static com.mr208.ExpandedArmory.ExArmRef.MOD_ID;
+
 @Optional.Interface(iface = "mods.railcraft.common.items.ItemCrowbar", modid = "Railcraft")
 public class ExArmItemCrowbar extends ItemCrowbar {
 
@@ -23,7 +25,7 @@ public class ExArmItemCrowbar extends ItemCrowbar {
 
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        itemIcon = iconRegister.registerIcon("@MOD_ID@:" + materialName + "/crowbar." + materialName);
+        itemIcon = iconRegister.registerIcon(MOD_ID + ":" + materialName + "/crowbar." + materialName);
     }
 
     @Override

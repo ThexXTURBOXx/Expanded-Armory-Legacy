@@ -19,6 +19,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import thaumcraft.api.ThaumcraftApi;
 
+import static com.mr208.ExpandedArmory.ExArmRef.MOD_ID;
+
 public class ThaumcraftIntegration {
 
     public static WeaponCollection thaumiumWeapons;
@@ -39,39 +41,39 @@ public class ThaumcraftIntegration {
         Item battleaxe = null, boomerang = null, flail = null, halberd = null, katana = null, knife = null,
                 musketWithBayonet = null, spear = null, warhammer = null;
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("battleaxe"))
-            battleaxe = new ThaumicItemMelee("@MOD_ID@", "battleaxe.void",
+            battleaxe = new ThaumicItemMelee(MOD_ID, "battleaxe.void",
                     new MeleeCompBattleaxe(ThaumcraftApi.toolMatVoid), "ingotVoid", EnumRarity.uncommon)
-                    .setTextureName("@MOD_ID@:void/battleaxe.void");
+                    .setTextureName(MOD_ID + ":void/battleaxe.void");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("boomerang"))
-            boomerang = new ThaumicItemMelee("@MOD_ID@", "boomerang.void",
+            boomerang = new ThaumicItemMelee(MOD_ID, "boomerang.void",
                     new MeleeCompBoomerang(ThaumcraftApi.toolMatVoid), "ingotVoid", EnumRarity.uncommon)
-                    .setTextureName("@MOD_ID@:void/boomerang.void");
+                    .setTextureName(MOD_ID + ":void/boomerang.void");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("flail"))
-            flail = new VoidItemFlail("@MOD_ID@", "flail.void", ThaumcraftApi.toolMatVoid, EnumRarity.uncommon,
-                    "ingotVoid").setTextureName("@MOD_ID@:void/flail.void");
+            flail = new VoidItemFlail(MOD_ID, "flail.void", ThaumcraftApi.toolMatVoid, EnumRarity.uncommon,
+                    "ingotVoid").setTextureName(MOD_ID + ":void/flail.void");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("halberd"))
-            halberd = new ThaumicItemMelee("@MOD_ID@", "halberd.void", new MeleeCompHalberd(ThaumcraftApi.toolMatVoid),
-                    "ingotVoid", EnumRarity.uncommon).setTextureName("@MOD_ID@:void/halberd.void");
+            halberd = new ThaumicItemMelee(MOD_ID, "halberd.void", new MeleeCompHalberd(ThaumcraftApi.toolMatVoid),
+                    "ingotVoid", EnumRarity.uncommon).setTextureName(MOD_ID + ":void/halberd.void");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("katana"))
-            katana = new ThaumicItemMelee("@MOD_ID@", "katana.void",
+            katana = new ThaumicItemMelee(MOD_ID, "katana.void",
                     new MeleeComponent(MeleeComponent.MeleeSpecs.KATANA,
-                    ThaumcraftApi.toolMatVoid), "ingotVoid", EnumRarity.uncommon)
-                    .setTextureName("@MOD_ID@:void/katana.void");
+                            ThaumcraftApi.toolMatVoid), "ingotVoid", EnumRarity.uncommon)
+                    .setTextureName(MOD_ID + ":void/katana.void");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("knife")) {
-            knife = new ThaumicItemMelee("@MOD_ID@", "knife.void", new MeleeCompKnife(ThaumcraftApi.toolMatVoid),
-                    "ingotVoid", EnumRarity.uncommon).setTextureName("@MOD_ID@:void/knife.void");
+            knife = new ThaumicItemMelee(MOD_ID, "knife.void", new MeleeCompKnife(ThaumcraftApi.toolMatVoid),
+                    "ingotVoid", EnumRarity.uncommon).setTextureName(MOD_ID + ":void/knife.void");
             if (BalkonsWeaponMod.instance.modConfig.isEnabled("musket"))
-                musketWithBayonet = new VoidItemMusket("@MOD_ID@", "musketbayonet.void",
+                musketWithBayonet = new VoidItemMusket(MOD_ID, "musketbayonet.void",
                         new MeleeCompKnife(ThaumcraftApi.toolMatVoid), knife, EnumRarity.uncommon, "ingotVoid")
-                        .setTextureName("@MOD_ID@:void/musketbayonet.void");
+                        .setTextureName(MOD_ID + ":void/musketbayonet.void");
         }
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("spear"))
-            spear = new ThaumicItemMelee("@MOD_ID@", "spear.void", new MeleeCompSpear(ThaumcraftApi.toolMatVoid),
-                    "ingotVoid", EnumRarity.uncommon).setTextureName("@MOD_ID@:void/spear.void");
+            spear = new ThaumicItemMelee(MOD_ID, "spear.void", new MeleeCompSpear(ThaumcraftApi.toolMatVoid),
+                    "ingotVoid", EnumRarity.uncommon).setTextureName(MOD_ID + ":void/spear.void");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("warhammer"))
-            warhammer = new ThaumicItemMelee("@MOD_ID@", "warhammer.void",
+            warhammer = new ThaumicItemMelee(MOD_ID, "warhammer.void",
                     new MeleeCompWarhammer(ThaumcraftApi.toolMatVoid), "ingotVoid", EnumRarity.uncommon)
-                    .setTextureName("@MOD_ID@:void/warhammer.void");
+                    .setTextureName(MOD_ID + ":void/warhammer.void");
 
         voidMetalWeapons = new WeaponCollection(battleaxe, boomerang, flail, halberd, katana, knife,
                 musketWithBayonet, spear, warhammer);
@@ -89,40 +91,40 @@ public class ThaumcraftIntegration {
         Item battleaxe = null, boomerang = null, flail = null, halberd = null, katana = null, knife = null,
                 musketWithBayonet = null, spear = null, warhammer = null;
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("battleaxe"))
-            battleaxe = new ThaumicItemMelee("@MOD_ID@", "battleaxe.thaumium",
-                    new MeleeCompBattleaxe(ThaumcraftApi.toolMatThaumium), "ingotThaumium", EnumRarity.uncommon).setTextureName("@MOD_ID@:thaumium/battleaxe.thaumium");
+            battleaxe = new ThaumicItemMelee(MOD_ID, "battleaxe.thaumium",
+                    new MeleeCompBattleaxe(ThaumcraftApi.toolMatThaumium), "ingotThaumium", EnumRarity.uncommon).setTextureName(MOD_ID + ":thaumium/battleaxe.thaumium");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("boomerang"))
-            boomerang = new ThaumicItemMelee("@MOD_ID@", "boomerang.thaumium",
-                    new MeleeCompBoomerang(ThaumcraftApi.toolMatThaumium), "ingotThaumium", EnumRarity.uncommon).setTextureName("@MOD_ID@:thaumium/boomerang.thaumium");
+            boomerang = new ThaumicItemMelee(MOD_ID, "boomerang.thaumium",
+                    new MeleeCompBoomerang(ThaumcraftApi.toolMatThaumium), "ingotThaumium", EnumRarity.uncommon).setTextureName(MOD_ID + ":thaumium/boomerang.thaumium");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("flail"))
-            flail = new ThaumicItemFlail("@MOD_ID@", "flail.thaumium", ThaumcraftApi.toolMatThaumium,
+            flail = new ThaumicItemFlail(MOD_ID, "flail.thaumium", ThaumcraftApi.toolMatThaumium,
                     EnumRarity.uncommon,
-                    "ingotThaumium").setTextureName("@MOD_ID@:thaumium/flail.thaumium");
+                    "ingotThaumium").setTextureName(MOD_ID + ":thaumium/flail.thaumium");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("halberd"))
-            halberd = new ThaumicItemMelee("@MOD_ID@", "halberd.thaumium",
+            halberd = new ThaumicItemMelee(MOD_ID, "halberd.thaumium",
                     new MeleeCompHalberd(ThaumcraftApi.toolMatThaumium), "ingotThaumium", EnumRarity.uncommon)
-                    .setTextureName("@MOD_ID@:thaumium/halberd.thaumium");
+                    .setTextureName(MOD_ID + ":thaumium/halberd.thaumium");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("katana"))
-            katana = new ThaumicItemMelee("@MOD_ID@", "katana.thaumium",
+            katana = new ThaumicItemMelee(MOD_ID, "katana.thaumium",
                     new MeleeComponent(MeleeComponent.MeleeSpecs.KATANA, ThaumcraftApi.toolMatThaumium),
-                    "ingotThaumium", EnumRarity.uncommon).setTextureName("@MOD_ID@:thaumium/katana.thaumium");
+                    "ingotThaumium", EnumRarity.uncommon).setTextureName(MOD_ID + ":thaumium/katana.thaumium");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("knife")) {
-            knife = new ThaumicItemMelee("@MOD_ID@", "knife.thaumium",
+            knife = new ThaumicItemMelee(MOD_ID, "knife.thaumium",
                     new MeleeCompKnife(ThaumcraftApi.toolMatThaumium),
-                    "ingotThaumium", EnumRarity.uncommon).setTextureName("@MOD_ID@:thaumium/knife.thaumium");
+                    "ingotThaumium", EnumRarity.uncommon).setTextureName(MOD_ID + ":thaumium/knife.thaumium");
             if (BalkonsWeaponMod.instance.modConfig.isEnabled("musket"))
-                musketWithBayonet = new ThaumicItemMusket("@MOD_ID@", "musketbayonet.thaumium",
+                musketWithBayonet = new ThaumicItemMusket(MOD_ID, "musketbayonet.thaumium",
                         new MeleeCompKnife(ThaumcraftApi.toolMatThaumium), knife, EnumRarity.uncommon,
-                        "ingotThaumium").setTextureName("@MOD_ID@:thaumium/musketbayonet.thaumium");
+                        "ingotThaumium").setTextureName(MOD_ID + ":thaumium/musketbayonet.thaumium");
         }
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("spear"))
-            spear = new ThaumicItemMelee("@MOD_ID@", "spear.thaumium",
+            spear = new ThaumicItemMelee(MOD_ID, "spear.thaumium",
                     new MeleeCompSpear(ThaumcraftApi.toolMatThaumium),
-                    "ingotThaumium", EnumRarity.uncommon).setTextureName("@MOD_ID@:thaumium/spear.thaumium");
+                    "ingotThaumium", EnumRarity.uncommon).setTextureName(MOD_ID + ":thaumium/spear.thaumium");
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("warhammer"))
-            warhammer = new ThaumicItemMelee("@MOD_ID@", "warhammer.thaumium",
+            warhammer = new ThaumicItemMelee(MOD_ID, "warhammer.thaumium",
                     new MeleeCompWarhammer(ThaumcraftApi.toolMatThaumium), "ingotThaumium", EnumRarity.uncommon)
-                    .setTextureName("@MOD_ID@:thaumium/warhammer.thaumium");
+                    .setTextureName(MOD_ID + ":thaumium/warhammer.thaumium");
 
         thaumiumWeapons = new WeaponCollection(battleaxe, boomerang, flail, halberd, katana, knife,
                 musketWithBayonet, spear, warhammer);

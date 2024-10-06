@@ -10,6 +10,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 
+import static com.mr208.ExpandedArmory.ExArmRef.MOD_ID;
+
 public class ItemCrowbarResistance extends ExArmItemCrowbar {
 
     public ItemCrowbarResistance(Item.ToolMaterial material) {
@@ -24,7 +26,7 @@ public class ItemCrowbarResistance extends ExArmItemCrowbar {
 
     @Override
     public void registerIcons(IIconRegister iconRegister) {
-        itemIcon = iconRegister.registerIcon("@MOD_ID@:crowbar.resistance");
+        itemIcon = iconRegister.registerIcon(MOD_ID + ":crowbar.resistance");
     }
 
     @Override
