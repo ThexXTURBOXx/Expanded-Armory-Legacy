@@ -1,6 +1,5 @@
 package com.mr208.ExpandedArmory.Thaumcraft;
 
-import com.mr208.ExpandedArmory.Items.ExArmItemFlail;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import java.util.List;
@@ -16,21 +15,12 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
-import thaumcraft.api.IRepairable;
 import thaumcraft.api.IWarpingGear;
 
-public class VoidItemFlail extends ExArmItemFlail implements IRepairable, IWarpingGear {
-
-    private final EnumRarity rarity;
+public class VoidItemFlail extends ThaumicItemFlail implements IWarpingGear {
 
     public VoidItemFlail(String modId, String id, ToolMaterial toolMaterial, EnumRarity rarity, String repairMaterial) {
-        super(modId, id, toolMaterial, repairMaterial);
-        this.rarity = rarity;
-    }
-
-    @Override
-    public EnumRarity getRarity(ItemStack par1) {
-        return rarity;
+        super(modId, id, toolMaterial, rarity, repairMaterial);
     }
 
     @Override

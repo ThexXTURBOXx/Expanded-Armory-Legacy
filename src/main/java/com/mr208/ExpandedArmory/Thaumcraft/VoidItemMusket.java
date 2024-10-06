@@ -21,19 +21,11 @@ import org.jetbrains.annotations.NotNull;
 import thaumcraft.api.IRepairable;
 import thaumcraft.api.IWarpingGear;
 
-public class VoidItemMusket extends ExArmItemMusket implements IRepairable, IWarpingGear {
-
-    private final EnumRarity rarity;
+public class VoidItemMusket extends ThaumicItemMusket implements IWarpingGear {
 
     public VoidItemMusket(String modId, String id, MeleeComponent meleeComponent, Item bayonetItem, EnumRarity rarity,
                           String repairMaterial) {
-        super(modId, id, meleeComponent, bayonetItem, repairMaterial);
-        this.rarity = rarity;
-    }
-
-    @Override
-    public EnumRarity getRarity(ItemStack par1) {
-        return rarity;
+        super(modId, id, meleeComponent, bayonetItem, rarity, repairMaterial);
     }
 
     @Override
