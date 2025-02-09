@@ -13,6 +13,7 @@ import com.mr208.ExpandedArmory.Items.ExArmItemFlail;
 import com.mr208.ExpandedArmory.Items.ExArmItemMelee;
 import com.mr208.ExpandedArmory.Items.ExArmItemMusket;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
@@ -81,7 +82,7 @@ public class RegisterItems {
         // Flail
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("flail") && weapons.flail != null)
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(weapons.flail), "  O", " XO", "X #",
-                    'X', stickItem, 'O', "string", '#', materialItem));
+                    'X', stickItem, 'O', Items.string, '#', materialItem));
         // Halberd
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("halberd") && weapons.halberd != null)
             GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(weapons.halberd), " ##", " X#", "X  ",
