@@ -1,9 +1,9 @@
 # Expanded Armory: Legacy
 
 [![Workflow status](https://img.shields.io/github/actions/workflow/status/ThexXTURBOXx/Expanded-Armory-Legacy/build.yml?logo=githubactions&style=flat-square)](https://github.com/ThexXTURBOXx/Expanded-Armory-Legacy/actions/workflows/build.yml)
-<!--[![CurseForge Downloads](https://img.shields.io/curseforge/dt/1033985?logo=curseforge&style=flat-square)](https://www.curseforge.com/minecraft/mc-mods/balkons-weaponmod-legacy)
-[![Modrinth Downloads](https://img.shields.io/modrinth/dt/MCF15nCy?logo=modrinth&style=flat-square)](https://modrinth.com/mod/balkons-weaponmod-legacy)
-[![Translate on Crowdin](https://img.shields.io/static/v1?label=Translate&message=on%20Crowdin&logo=crowdin&style=flat-square)](https://crowdin.com/project/balkons-weaponmod-legacy)-->
+[![CurseForge Downloads](https://img.shields.io/curseforge/dt/1197267?logo=curseforge&style=flat-square)](https://www.curseforge.com/minecraft/mc-mods/expanded-armory-legacy)
+[![Modrinth Downloads](https://img.shields.io/modrinth/dt/75W8JAu2?logo=modrinth&style=flat-square)](https://modrinth.com/mod/expanded-armory-legacy)
+[![Translate on Crowdin](https://img.shields.io/static/v1?label=Translate&message=on%20Crowdin&logo=crowdin&style=flat-square)](https://crowdin.com/project/balkons-weaponmod-legacy)
 [![Sponsor me!](https://img.shields.io/github/sponsors/ThexXTURBOXx?logo=github&style=flat-square)](https://github.com/sponsors/ThexXTURBOXx)
 
 Expanded Armory: Legacy is a simple mod, it takes the tool materials from other mods and brings them to Balkon's WeaponMod: Legacy.  

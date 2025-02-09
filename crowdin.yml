@@ -1,0 +1,10 @@
+"api_token_env": "CROWDIN_PERSONAL_TOKEN"
+"project_id_env": "CROWDIN_PROJECT_ID"
+"preserve_hierarchy": true
+
+"files": [
+  {
+    "source": "src/main/resources/assets/exparmory/lang/en_US.lang",
+    "translation": "src/main/resources/assets/exparmory/lang/%language%.lang"
+  }
+]
