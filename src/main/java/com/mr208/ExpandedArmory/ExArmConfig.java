@@ -10,6 +10,7 @@ public class ExArmConfig {
     // General Alloys and Metals
     public static Boolean enableBronze;
     public static Boolean enableSteel;
+    public static Boolean enableNetherite;
 
     // Flaxbeard's Steampower
     public static Boolean enableFSP;
@@ -63,6 +64,8 @@ public class ExArmConfig {
                 "Enable Bronze Weapons?");
         enableSteel = conf.getBoolean("2. Steel Weapons", "Steel", true,
                 "Enable Steel Weapons?");
+        enableNetherite = conf.getBoolean("3. Netherite Weapons", "Netherite", true,
+                "Enable Netherite Weapons?");
 
 
         // Applied Energistics 2

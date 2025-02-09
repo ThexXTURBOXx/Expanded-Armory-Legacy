@@ -97,6 +97,8 @@ dependencies {
     modApi("curse.maven:railcraft-51195:2458987")
     modApi("curse.maven:simpleores-226138:2293236")
     modApi("curse.maven:thaumcraft-223628:2227552")
+    modApi("curse.maven:netheriteplus-376911:2983061")
+    modApi("curse.maven:et-futurum-requiem-441392:5873837")
 }
 
 // Genius approach to replace @VERSION@ from https://stackoverflow.com/a/54094378/5894824

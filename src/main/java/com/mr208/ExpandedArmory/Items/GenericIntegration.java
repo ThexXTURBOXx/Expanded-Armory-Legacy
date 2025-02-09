@@ -11,6 +11,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class GenericIntegration {
 
@@ -20,11 +21,16 @@ public class GenericIntegration {
     public static ItemIngot ingotSteel;
     public static WeaponCollection steelWeapons;
 
+    public static ItemIngot ingotNetherite;
+    public static WeaponCollection netheriteWeapons;
+
     public static void preInitGI() {
         GameRegistry.registerItem(ingotBronze = new ItemIngot("ingotBronze"), "ingotBronze");
         ingotBronze.registerOreDictionary();
         GameRegistry.registerItem(ingotSteel = new ItemIngot("ingotSteel"), "ingotSteel");
         ingotSteel.registerOreDictionary();
+        GameRegistry.registerItem(ingotNetherite = new ItemIngot("ingotNetherite"), "ingotNetherite");
+        ingotNetherite.registerOreDictionary();
 
         if (Loader.isModLoaded("Railcraft")) RailcraftIntegration.preInit();
     }
@@ -48,6 +54,20 @@ public class GenericIntegration {
     }
 
 
+    public static void initNetherite() {
+        Item.ToolMaterial netheriteMaterial = getNetheriteMaterial();
+        MaterialRegistry.registerCustomProjectileMaterial(new CustomMaterials(netheriteMaterial, 0x4d4d4dFF));
+        if (netheriteMaterial.customCraftingMaterial == null) netheriteMaterial.setRepairItem(new ItemStack(ingotNetherite, 1, 0));
+        netheriteWeapons = RegisterItems.registerRegularWeapon("netherite", netheriteMaterial, "ingotNetherite");
+        RegisterItems.createWeaponRecipes(netheriteWeapons, "stickWood", "ingotNetherite"); // TODO
+
+        // Fix for NetheritePlus+
+        if (Loader.isModLoaded("netheriteplus"))
+            for (ItemStack is : OreDictionary.getOres("NetheriteIngot"))
+                OreDictionary.registerOre("ingotNetherite", is);
+    }
+
+
     private static Item.ToolMaterial getBronzeMaterial() {
         if (Loader.isModLoaded("fusion")) return Item.ToolMaterial.valueOf("BRONZE");
         if (Loader.isModLoaded("ThermalFoundation")) return Item.ToolMaterial.valueOf("TF:BRONZE");
@@ -58,6 +78,12 @@ public class GenericIntegration {
         if (Loader.isModLoaded("fusion")) return Item.ToolMaterial.valueOf("STEEL");
         if (Loader.isModLoaded("Railcraft")) return Item.ToolMaterial.valueOf("RAILCRAFT_STEEL");
         return EnumHelper.addToolMaterial("EA|STEEL", 2, 500, 7f, 2f, 9);
+    }
+
+    private static Item.ToolMaterial getNetheriteMaterial() {
+        if (Loader.isModLoaded("etfuturum")) return Item.ToolMaterial.valueOf("Netherite_Tool");
+        if (Loader.isModLoaded("netheriteplus")) return Item.ToolMaterial.valueOf("netheriteToolMaterial");
+        return EnumHelper.addToolMaterial("EA|NETHERITE", 4, 2031, 9f, 4f, 15);
     }
 
 }

@@ -58,6 +58,16 @@ item.musketbayonet.steel.name=Musket with Steel Bayonet
 item.spear.steel.name=Steel Spear
 item.warhammer.steel.name=Steel Warhammer
 
+item.battleaxe.netherite.name=Netherite Battleaxe
+item.boomerang.netherite.name=Netherite Boomerang
+item.flail.netherite.name=Netherite Flail
+item.halberd.netherite.name=Netherite Halberd
+item.katana.netherite.name=Netherite Katana
+item.knife.netherite.name=Netherite Knife
+item.musketbayonet.netherite.name=Musket with Netherite Bayonet
+item.spear.netherite.name=Netherite Spear
+item.warhammer.netherite.name=Netherite Warhammer
+
 item.battleaxe.brass.name=Brass Battleaxe
 item.boomerang.brass.name=Brass Boomerang
 item.flail.brass.name=Brass Flail
@@ -112,6 +122,7 @@ item.katana.shrouded.name=Aberrant Shrouded Blade
 
 item.exparmory_ingotBronze.name=Bronze Ingot
 item.exparmory_ingotSteel.name=Steel Ingot
+item.exparmory_ingotNetherite.name=Netherite Ingot
 item.exparmory_ingotBrass.name=Brass Ingot
 item.exparmory_ingotGildedIron.name=Gilded Iron Ingot
 

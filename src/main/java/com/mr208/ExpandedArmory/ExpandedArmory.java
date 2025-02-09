@@ -4,10 +4,12 @@ import com.mr208.ExpandedArmory.AE2.AE2Integration;
 import com.mr208.ExpandedArmory.Botania.BotaniaIntegration;
 import com.mr208.ExpandedArmory.FSP.FSPIntegration;
 import com.mr208.ExpandedArmory.Items.GenericIntegration;
+import com.mr208.ExpandedArmory.Proxy.EACommonProxy;
 import com.mr208.ExpandedArmory.SimpleOres.SimpleOreIntegration;
 import com.mr208.ExpandedArmory.Thaumcraft.ThaumcraftIntegration;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLConstructionEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -23,11 +25,17 @@ import static com.mr208.ExpandedArmory.ExArmRef.UPDATE_JSON;
         acceptedMinecraftVersions = "@MC_RANGE@",
         dependencies = "required-after:Forge;required-after:weaponmod@@BWM_VERSION_RANGE@;" +
                        "after:Botania;after:appliedenergistics2;after:Thaumcraft;after:simpleores;after:fusion;" +
-                       "after:netherrocks;after:Steamcraft;after:Railcraft;after:gildediron")
+                       "after:netherrocks;after:Steamcraft;after:Railcraft;after:gildediron;after:etfuturum;" +
+                       "after:netheriteplus")
 public class ExpandedArmory {
 
     @Mod.Instance(MOD_ID)
     public static ExpandedArmory instance;
+
+    @SidedProxy(clientSide = "com.mr208.ExpandedArmory.Proxy.EAClientProxy",
+            serverSide = "com.mr208.ExpandedArmory.Proxy.EACommonProxy",
+            modId = MOD_ID)
+    public static EACommonProxy proxy;
 
     @Mod.EventHandler
     public void constructMod(FMLConstructionEvent event) {
@@ -58,6 +66,8 @@ public class ExpandedArmory {
             GenericIntegration.initSteel();
         if (ExArmConfig.enableBronze)
             GenericIntegration.initBronze();
+        if (ExArmConfig.enableNetherite)
+            GenericIntegration.initNetherite();
         SimpleOreIntegration.initSimpleMods();
     }
 
