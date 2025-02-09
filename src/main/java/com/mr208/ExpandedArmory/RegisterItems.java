@@ -40,9 +40,11 @@ public class RegisterItems {
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("flail"))
             flail = new ExArmItemFlail(modId, "flail." + itemName, material, repairItem)
                     .setTextureName(modId + ":" + itemName + "/flail." + itemName);
-        if (BalkonsWeaponMod.instance.modConfig.isEnabled("halberd"))
+        if (BalkonsWeaponMod.instance.modConfig.isEnabled("halberd")) {
             halberd = new ExArmItemMelee(modId, "halberd." + itemName, new MeleeCompHalberd(material), repairItem)
                     .setTextureName(modId + ":" + itemName + "/halberd." + itemName);
+            ExpandedArmory.proxy.registerLongWeapon(halberd);
+        }
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("katana"))
             katana = new ExArmItemMelee(modId, "katana." + itemName,
                     new MeleeComponent(MeleeComponent.MeleeSpecs.KATANA, material), repairItem)
@@ -55,9 +57,11 @@ public class RegisterItems {
                         new MeleeCompKnife(material), knife, repairItem)
                         .setTextureName(modId + ":" + itemName + "/musketbayonet." + itemName);
         }
-        if (BalkonsWeaponMod.instance.modConfig.isEnabled("spear"))
+        if (BalkonsWeaponMod.instance.modConfig.isEnabled("spear")) {
             spear = new ExArmItemMelee(modId, "spear." + itemName, new MeleeCompSpear(material), repairItem)
                     .setTextureName(modId + ":" + itemName + "/spear." + itemName);
+            ExpandedArmory.proxy.registerLongWeapon(spear);
+        }
         if (BalkonsWeaponMod.instance.modConfig.isEnabled("warhammer"))
             warhammer = new ExArmItemMelee(modId, "warhammer." + itemName, new MeleeCompWarhammer(material), repairItem)
                     .setTextureName(modId + ":" + itemName + "/warhammer." + itemName);
