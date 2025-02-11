@@ -73,3 +73,17 @@ jobs:
           loaders: forge
           game-versions: 1.7.10
           java: 8
+          dependencies: |
+            balkons-weaponmod-legacy(required){modrinth:MCF15nCy}{curseforge:1033985}#(ignore:github)
+            botania(optional){modrinth:pfjLUfGv}{curseforge:225643}#(ignore:github)
+            appliedenergistics2(optional){modrinth:XxWD5pD3}{curseforge:223794}#(ignore:github)
+            thaumcraft(optional){curseforge:223628}#(ignore:[modrinth,github])
+            simpleores(optional){modrinth:51dAkghQ}{curseforge:226138}#(ignore:github)
+            fusion(optional){modrinth:8K8WPv8S}{curseforge:226139}#(ignore:github)
+            netherrocks(optional){modrinth:jsresWnw}{curseforge:226140}#(ignore:github)
+            flaxbeardssteampower(optional){modrinth:ygMSB8hs}{curseforge:224867}#(ignore:github)
+            railcraft(optional){curseforge:51195}#(ignore:[modrinth,github])
+            etfuturum(optional){curseforge:230114}#(ignore:[modrinth,github])
+            etfuturumrequiem(optional){modrinth:o56psTwz}{curseforge:441392}#(ignore:github)
+            netheriteplus(optional){curseforge:376911}#(ignore:[modrinth,github])
+            thermalfoundation(optional){modrinth:Xvg6q5Wp}{curseforge:222880}#(ignore:github)
