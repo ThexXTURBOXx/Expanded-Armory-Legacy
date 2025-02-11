@@ -25,7 +25,8 @@ import static com.mr208.ExpandedArmory.ExArmRef.UPDATE_JSON;
         acceptedMinecraftVersions = "@MC_RANGE@",
         dependencies = "required-after:Forge;required-after:weaponmod@@BWM_VERSION_RANGE@;" +
                        "after:Botania;after:appliedenergistics2;after:Thaumcraft;after:simpleores;after:fusion;" +
-                       "after:netherrocks;after:Steamcraft;after:Railcraft;after:etfuturum;after:netheriteplus")
+                       "after:netherrocks;after:Steamcraft;after:Railcraft;after:etfuturum;after:netheriteplus;" +
+                       "after:ThermalFoundation")
 public class ExpandedArmory {
 
     @Mod.Instance(MOD_ID)
