@@ -26,11 +26,8 @@ public class GenericIntegration {
 
     public static void preInitGI() {
         GameRegistry.registerItem(ingotBronze = new ItemIngot("ingotBronze"), "ingotBronze");
-        ingotBronze.registerOreDictionary();
         GameRegistry.registerItem(ingotSteel = new ItemIngot("ingotSteel"), "ingotSteel");
-        ingotSteel.registerOreDictionary();
         GameRegistry.registerItem(ingotNetherite = new ItemIngot("ingotNetherite"), "ingotNetherite");
-        ingotNetherite.registerOreDictionary();
 
         if (Loader.isModLoaded("Railcraft")) RailcraftIntegration.preInit();
     }
