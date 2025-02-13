@@ -4,6 +4,7 @@ import com.mr208.ExpandedArmory.AE2.AE2Integration;
 import com.mr208.ExpandedArmory.Botania.BotaniaIntegration;
 import com.mr208.ExpandedArmory.FSP.FSPIntegration;
 import com.mr208.ExpandedArmory.Items.GenericIntegration;
+import com.mr208.ExpandedArmory.Items.ItemIngot;
 import com.mr208.ExpandedArmory.Proxy.EACommonProxy;
 import com.mr208.ExpandedArmory.SimpleOres.SimpleOreIntegration;
 import com.mr208.ExpandedArmory.Thaumcraft.ThaumcraftIntegration;
@@ -50,6 +51,8 @@ public class ExpandedArmory {
         if (ExArmConfig.enableFSP && Loader.isModLoaded("Steamcraft"))
             FSPIntegration.preInitFSP();
         GenericIntegration.preInitGI();
+
+        ItemIngot.registerOreDictionary();
     }
 
     @Mod.EventHandler
